@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão de Preço e Número de Alunos de Cursos Online</title>
+</head>
+<body>
+    <h1>Previsão de Preço e Número de Alunos de Cursos Online</h1>
+
+    <h2>Popularidade de Cursos por Tema e País</h2>
+    {{ plot_popularidade|safe }}
+
+    <h2>Preços Médios por Idioma e País</h2>
+    <div>
+        <img src="{{ plot_precos }}" alt="Preços Médios por Idioma e País">
+    </div>
+
+    <h2>Distribuição de Alunos por Área de Estudo</h2>
+    <img src="data:image/png;base64,{{ plot_pizza }}" alt="Distribuição de Alunos">
+
+    <h2>Mapa Interativo de Popularidade de Cursos por País</h2>
+    {{ plot_mapa|safe }}
+</body>
+</html>

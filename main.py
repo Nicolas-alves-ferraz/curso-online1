@@ -7,21 +7,21 @@ import seaborn as sns
 def gerar_graficos(df):
     # Gráfico de Distribuição de Preços
     st.subheader('Distribuição de Preços dos Cursos')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.histplot(df['preco'], kde=True, ax=ax, color='blue')
     ax.set_title('Distribuição dos Preços')
     st.pyplot(fig)
 
     # Gráfico de Distribuição das Avaliações
     st.subheader('Distribuição das Avaliações (Ratings)')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.histplot(df['rating'], kde=True, ax=ax, color='green')
     ax.set_title('Distribuição das Avaliações')
     st.pyplot(fig)
 
     # Boxplot para Duração dos Cursos
     st.subheader('Boxplot da Duração dos Cursos')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.boxplot(x=df['duracao'], ax=ax, color='purple')
     ax.set_title('Boxplot da Duração dos Cursos')
     st.pyplot(fig)
@@ -29,7 +29,7 @@ def gerar_graficos(df):
     # Mapa de Calor para Verificar Correlação
     st.subheader('Correlação entre Variáveis Numéricas')
     correlacao = df[['preco', 'rating', 'duracao', 'num_alunos']].corr()
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(correlacao, annot=True, cmap='coolwarm', ax=ax)
     ax.set_title('Correlação entre Variáveis')
     st.pyplot(fig)
